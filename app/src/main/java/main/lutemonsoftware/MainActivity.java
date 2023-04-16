@@ -12,3 +12,5 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 }
+
+// Moi! Jos sait tämän näkymään niin kaikki toimii!!!!!
