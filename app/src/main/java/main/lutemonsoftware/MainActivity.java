@@ -14,3 +14,5 @@ public class MainActivity extends AppCompatActivity {
 }
 
 // Moi! Jos sait tämän näkymään niin kaikki toimii!!!!!
+
+// Tässä päässä kaikki toimii! ! !
