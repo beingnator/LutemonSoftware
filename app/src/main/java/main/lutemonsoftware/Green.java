@@ -1,4 +1,4 @@
 package main.lutemonsoftware;
 
-public class Green {
+public class Green extends Lutemon {
 }

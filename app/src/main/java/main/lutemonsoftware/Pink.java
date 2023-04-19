@@ -1,4 +1,8 @@
 package main.lutemonsoftware;
 
-public class Pink {
+public class Pink extends Lutemon {
+
+    public void Orange() {
+
+    }
 }
