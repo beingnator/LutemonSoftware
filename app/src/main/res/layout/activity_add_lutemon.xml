@@ -42,35 +42,35 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/btnWhite"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:buttonTint="#283593"
             android:text="Valkoinen" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/btnGreen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:buttonTint="#283593"
             android:text="Vihreä" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/btnPink"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:buttonTint="#283593"
             android:text="Pinkki" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/btnOrange"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:buttonTint="#283593"
             android:text="Oranssi" />
 
         <RadioButton
-            android:id="@+id/radioButton5"
+            android:id="@+id/btnBlack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:buttonTint="#283593"
