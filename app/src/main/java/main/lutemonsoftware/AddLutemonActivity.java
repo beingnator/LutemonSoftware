@@ -16,7 +16,7 @@ public class AddLutemonActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_lutemon);
     }
 
-    public void addUser(View view) {
+    public void addLutemon(View view) {
         Button btnWhite = findViewById(R.id.btnWhite);
         Button btnGreen = findViewById(R.id.btnGreen);
         Button btnPink = findViewById(R.id.btnPink);
