@@ -25,6 +25,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, LutemonListActivity.class);
         startActivity(intent);
     }
+
+    public void switchToBattleGround(View view) {
+        Intent intent = new Intent(this, BattleGroundActivity.class);
+        startActivity(intent);
+    }
 }
 
 // Moi! Jos sait tämän näkymään niin kaikki toimii!!!!!
