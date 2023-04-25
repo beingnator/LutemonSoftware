@@ -9,5 +9,6 @@ public class Black extends Lutemon {
         maxHealth = health = 16;
         id = getNumberOfCreatedLutemons();
         numberOfCreatedLutemons = id + 1;
+        image = R.drawable.black_virus;
     }
 }

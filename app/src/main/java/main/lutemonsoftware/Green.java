@@ -9,5 +9,6 @@ public class Green extends Lutemon {
         maxHealth = health = 19;
         id = getNumberOfCreatedLutemons();
         numberOfCreatedLutemons = id + 1;
+        image = R.drawable.green_flower;
     }
 }

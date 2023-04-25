@@ -9,6 +9,6 @@ public class Pink extends Lutemon {
         maxHealth = health = 18;
         id = getNumberOfCreatedLutemons();
         numberOfCreatedLutemons = id + 1;
-
+        image = R.drawable.pink_cookie;
     }
 }

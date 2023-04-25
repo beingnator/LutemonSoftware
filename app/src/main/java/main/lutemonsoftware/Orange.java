@@ -9,7 +9,7 @@ public class Orange extends Lutemon {
         maxHealth = health = 17;
         id = getNumberOfCreatedLutemons();
         numberOfCreatedLutemons = id + 1;
-
+        image = R.drawable.orange_face;
 
     }
 }

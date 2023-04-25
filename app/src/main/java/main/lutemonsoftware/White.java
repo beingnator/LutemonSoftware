@@ -9,5 +9,6 @@ public class White extends Lutemon {
         maxHealth = health = 20;
         id = getNumberOfCreatedLutemons();
         numberOfCreatedLutemons = id + 1;
+        image = R.drawable.white_bunny;
     }
 }
