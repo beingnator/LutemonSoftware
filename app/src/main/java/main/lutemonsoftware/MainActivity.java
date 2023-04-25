@@ -12,10 +12,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Storage s = Storage.getInstance();
+        s.loadLutemons(this);
     }
 
     public void switchToAddLutemon(View view) {
         Intent intent = new Intent(this, AddLutemonActivity.class);
+        startActivity(intent);
+    }
+
+    public void switchToListLutemon(View view) {
+        Intent intent = new Intent(this, LutemonListActivity.class);
         startActivity(intent);
     }
 }

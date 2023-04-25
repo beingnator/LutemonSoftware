@@ -2,10 +2,12 @@ package main.lutemonsoftware;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 public class AddLutemonActivity extends AppCompatActivity {
@@ -17,32 +19,46 @@ public class AddLutemonActivity extends AppCompatActivity {
     }
 
     public void addLutemon(View view) {
-        Button btnWhite = findViewById(R.id.btnWhite);
-        Button btnGreen = findViewById(R.id.btnGreen);
-        Button btnPink = findViewById(R.id.btnPink);
-        Button btnOrange = findViewById(R.id.btnOrange);
-        Button btnBlack = findViewById(R.id.btnBlack);
+        RadioButton btnWhite = findViewById(R.id.btnWhite);
+        RadioButton btnGreen = findViewById(R.id.btnGreen);
+        RadioButton btnPink = findViewById(R.id.btnPink);
+        RadioButton btnOrange = findViewById(R.id.btnOrange);
+        RadioButton btnBlack = findViewById(R.id.btnBlack);
         Button btnAddLutemon = findViewById(R.id.btnAddNewLutemon);
         EditText txtName = findViewById(R.id.editTxtName);
-        RadioGroup rgLutemonColor = findViewById(R.id.rgLutemons);
+        RadioGroup rgLutemonColor = findViewById(R.id.rgLutemonColor);
 
         switch (rgLutemonColor.getCheckedRadioButtonId()) {
             case R.id.btnWhite:
-                //hae storagesta lutemon
+                Storage.getInstance().addLutemon(new White(txtName.getText().toString()));
+                System.out.println("Lutemonin luominen onnistui.");
+                Storage.getInstance().saveLutemons(this);
                 break;
             case R.id.btnGreen:
-                //hae storagesta lutemon
+                Storage.getInstance().addLutemon(new Green(txtName.getText().toString()));
+                System.out.println("Lutemonin luominen onnistui.");
+                Storage.getInstance().saveLutemons(this);
                 break;
             case R.id.btnPink:
-                //hae storagesta lutemon
+                Storage.getInstance().addLutemon(new Pink(txtName.getText().toString()));
+                System.out.println("Lutemonin luominen onnistui.");
+                Storage.getInstance().saveLutemons(this);
                 break;
             case R.id.btnOrange:
-                //hae storagesta lutemon
+                Storage.getInstance().addLutemon(new Orange(txtName.getText().toString()));
+                System.out.println("Lutemonin luominen onnistui.");
+                Storage.getInstance().saveLutemons(this);
                 break;
             case R.id.btnBlack:
-                //hae storagesta lutemon
+                Storage.getInstance().addLutemon(new Black(txtName.getText().toString()));
+                System.out.println("Lutemonin luominen onnistui.");
+                Storage.getInstance().saveLutemons(this);
                 break;
-                // lutemonien tallentaminen
         }
+    }
+
+    public void switchBackToMain(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

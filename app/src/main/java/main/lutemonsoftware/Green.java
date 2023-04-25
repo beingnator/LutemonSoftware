@@ -2,7 +2,8 @@ package main.lutemonsoftware;
 
 public class Green extends Lutemon {
 
-    public Green() {
+    public Green(String lutemonName) {
+        super(lutemonName, "Vihreä");
         attack = 6;
         defence = 3;
         maxHealth = health = 19;

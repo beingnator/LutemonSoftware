@@ -8,15 +8,31 @@
     tools:context=".AddLutemonActivity">
 
     <Button
+        android:id="@+id/btnGoBack"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="#283593"
+        android:onClick="switchBackToMain"
+        android:text="Palaa takaisin"
+        android:textColor="#CDCDCD"
+        app:iconTint="#1565C0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddNewLutemon" />
+
+    <Button
         android:id="@+id/btnAddNewLutemon"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:backgroundTint="#283593"
+        android:onClick="addLutemon"
         android:text="Lisää uusi Lutemon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTxtName" />
+
 
     <EditText
         android:id="@+id/editTxtName"
@@ -30,10 +46,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rgLutemons" />
+        app:layout_constraintTop_toBottomOf="@+id/rgLutemonColor" />
 
     <RadioGroup
-        android:id="@+id/rgLutemons"
+        android:id="@+id/rgLutemonColor"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
