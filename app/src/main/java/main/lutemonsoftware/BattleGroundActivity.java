@@ -26,5 +26,11 @@ public class BattleGroundActivity extends AppCompatActivity {
         CheckBox fighterFour = findViewById(R.id.checkFighter4);
         Button btnStartFight = findViewById(R.id.btnFight);
         TextView fightStats = findViewById(R.id.txtBattleStats);
+
+
+
+
     }
+
+
 }
