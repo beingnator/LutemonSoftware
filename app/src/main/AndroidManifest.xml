@@ -12,6 +12,15 @@
         android:theme="@style/Theme.LutemonSoftware"
         tools:targetApi="31">
         <activity
+            android:name=".TrainingGroundActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TrainingGround"
+            android:exported="false" />
+        <activity
+            android:name=".training_ground"
+            android:exported="false" />
+        <activity
             android:name=".BattleGroundActivity"
             android:exported="false" />
         <activity
