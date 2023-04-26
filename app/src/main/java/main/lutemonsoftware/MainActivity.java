@@ -31,9 +31,3 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 }
-
-// Moi! Jos sait tämän näkymään niin kaikki toimii!!!!!
-
-// Tässä päässä kaikki toimii! ! !
-
-// Toimii
