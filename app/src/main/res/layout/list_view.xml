@@ -22,6 +22,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/txtSelect"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="VALITSEN SINUT!" />
+
 
     </LinearLayout>
 

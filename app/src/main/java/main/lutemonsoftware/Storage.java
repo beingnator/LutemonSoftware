@@ -24,6 +24,10 @@ public class Storage {
         lutemons.add(lutemon);
     }
 
+    public static Lutemon getLutemon(int pos) {
+        return storage.lutemons.get(pos);
+    }
+
     public ArrayList<Lutemon> getLutemons() {
         return lutemons;
     }
@@ -47,4 +51,5 @@ public class Storage {
             System.out.println("Lutemonien lukeminen ei onnistunut");
         }
     }
+
 }
