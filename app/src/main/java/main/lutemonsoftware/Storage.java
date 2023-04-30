@@ -9,8 +9,9 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 
 public class Storage {
-    private ArrayList<Lutemon> lutemons = new ArrayList<>();
+    private static ArrayList<Lutemon> lutemons = new ArrayList<>();
     private static Storage storage = null;
+    private static int numberOfSelecterdLutemons=0;
 
     public static Storage getInstance() {
         if (storage == null) {
@@ -49,6 +50,16 @@ public class Storage {
         } catch (ClassNotFoundException | IOException e) {
             System.out.println("Lutemonien lukeminen ei onnistunut");
         }
+    }
+
+    public static int getNumberOfSelectedLutemons() {
+        numberOfSelecterdLutemons = 0;
+        for ( Lutemon lutemon : lutemons ) {
+            if ( lutemon.getSelectionStatus() == 1 ) {
+                numberOfSelecterdLutemons = numberOfSelecterdLutemons + 1;
+            }
+        }
+        return numberOfSelecterdLutemons;
     }
 
 }
