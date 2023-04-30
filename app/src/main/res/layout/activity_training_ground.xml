@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3B1565C0"
+    tools:context=".TrainingGroundActivity">
+
+    <TextView
+        android:id="@+id/txtPick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
+        android:text="Valitse taistelija ja mitä haluat treenata"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/rgFighters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPick">
+
+        <RadioButton
+            android:id="@+id/rbF1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Taistelija 1" />
+
+        <RadioButton
+            android:id="@+id/rbF2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Taistelija 2" />
+
+        <RadioButton
+            android:id="@+id/rbF3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Taistelija 3" />
+
+        <RadioButton
+            android:id="@+id/rbF4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Taistelija 4" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/rgAttDef"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgFighters">
+
+        <RadioButton
+            android:id="@+id/rbAttack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hyökkäys" />
+
+        <RadioButton
+            android:id="@+id/rbDefense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Puolustus" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnTraining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
+        android:text="Treenaa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgAttDef" />
+
+    <TextView
+        android:id="@+id/txtTraining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
+        android:text="Treenaus suoritettu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTraining" />
+</androidx.constraintlayout.widget.ConstraintLayout>
