@@ -7,70 +7,49 @@
     android:background="#3B1565C0"
     tools:context=".BattleGroundActivity">
 
-    <TextView
-        android:id="@+id/txtHeadline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Valitse kaksi taistelijaa"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/btnStartBattle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginBottom="15dp"
         android:onClick="startBattle"
-        android:text="Taisteluun"
+        android:text="TAISTELE!"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rgFightingLutemons" />
-
-    <RadioGroup
-        android:id="@+id/rgFightingLutemons"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtHeadline">
-
-        <CheckBox
-            android:id="@+id/checkFighter1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Taistelija 1" />
-
-        <CheckBox
-            android:id="@+id/checkFighter2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Taistelija 2" />
-
-        <CheckBox
-            android:id="@+id/checkFighter3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Taistelija 3" />
-
-        <CheckBox
-            android:id="@+id/checkFighter4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Taistelija 4" />
-    </RadioGroup>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txtBattleStats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:hint="Taistelun eteneminen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnStartBattle" />
+        tools:layout_editor_absoluteY="322dp" />
+
+    <ImageView
+        android:id="@+id/ivBattleLutemon1"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:srcCompat="@drawable/black_virus"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="67dp" />
+
+    <ImageView
+        android:id="@+id/ivBattleLutemon2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:srcCompat="@drawable/black_virus"
+        tools:layout_editor_absoluteX="261dp"
+        tools:layout_editor_absoluteY="67dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginHorizontal="10dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="354dp"
+        tools:layout_editor_absoluteY="362dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
