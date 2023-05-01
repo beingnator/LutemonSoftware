@@ -25,20 +25,11 @@ public class BattleGroundActivity extends AppCompatActivity {
         setContentView(R.layout.activity_battle_ground);
 
 
-        // If there isn't exactly 2 chosen Lutemons to fight, one must be returned to main activity. Waits 4 seconds before.
+        // If there isn't exactly 2 chosen Lutemons to fight, one must be returned to main activity.
+
         if ( Storage.getNumberOfSelectedLutemons() != 2 ) {
             Toast.makeText(context, "Valitse listauksesta -KAKSI- Lutemonia taistellaksesi", Toast.LENGTH_LONG).show();
-            Thread closeActivity = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        Thread.sleep(4000);
-                        // Do some stuff
-                    } catch (Exception e) {
-                        e.getLocalizedMessage();
-                    }
-                }
-                });
+
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }
@@ -47,11 +38,7 @@ public class BattleGroundActivity extends AppCompatActivity {
     }
 
     public void startBattle(View view) {
-        RadioGroup rgFighters = findViewById(R.id.rgFightingLutemons);
-        CheckBox fighterOne = findViewById(R.id.checkFighter1);
-        CheckBox fighterTwo = findViewById(R.id.checkFighter2);
-        CheckBox fighterThree = findViewById(R.id.checkFighter3);
-        CheckBox fighterFour = findViewById(R.id.checkFighter4);
+
         Button btnStartFight = findViewById(R.id.btnFight);
         TextView fightStats = findViewById(R.id.txtBattleStats);
 
