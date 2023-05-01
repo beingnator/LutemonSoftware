@@ -30,4 +30,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, BattleGroundActivity.class);
         startActivity(intent);
     }
+
+    public void switchToTrainingGround(View view) {
+        Intent intent = new Intent(this, TrainingGroundActivity.class);
+        startActivity(intent);
+    }
 }
