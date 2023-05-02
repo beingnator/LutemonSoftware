@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -29,56 +30,38 @@ public class TrainingGroundActivity extends AppCompatActivity {
 
         adapter = new LutemonListAdapter(this, lutemons);
 
+        if (Storage.getNumberOfSelectedLutemons() != 1) {
+            Toast.makeText(context, "Valitse listauksesta -YKSI- Lutemon, jota haluat treenata!", Toast.LENGTH_LONG).show();
+
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
+
     }
 
     public void startTraining(View view) {
-        RadioGroup rgFighters = findViewById(R.id.rgFighters);
         RadioGroup rgAttDef = findViewById(R.id.rgAttDef);
 
-        int fighterIndex = -1;
         int attDefValue = -1;
-
-        switch (rgFighters.getCheckedRadioButtonId()) {
-            case R.id.rbWhite:
-                fighterIndex = 0;
-                break;
-            case R.id.rbGreen:
-                fighterIndex = 1;
-                break;
-            case R.id.rbPink:
-                fighterIndex = 2;
-                break;
-            case R.id.rbOrange:
-                fighterIndex = 3;
-                break;
-            case R.id.rbBlack:
-                fighterIndex = 4;
-                break;
-            default:
-                break;
-        }
+        Lutemon lutemon = Storage.getInstance().getFirstSelectedLutemon();
 
         switch (rgAttDef.getCheckedRadioButtonId()) {
             case R.id.rbAttack:
                 attDefValue = 0;
+                lutemon.train(attDefValue);
+                context = TrainingGroundActivity.this;
+                Toast.makeText(context, "Hyökkäyksen treenaus suoritettu!", Toast.LENGTH_LONG).show();
                 break;
             case R.id.rbDefense:
                 attDefValue = 1;
-                break;
-            default:
+                lutemon.train(attDefValue);
+                context = TrainingGroundActivity.this;
+                Toast.makeText(context, "Puolustuksen treenaus suoritettu!", Toast.LENGTH_LONG).show();
                 break;
         }
 
-        if (fighterIndex >= 0 && fighterIndex < lutemons.size()) {
-            Lutemon lutemon = lutemons.get(fighterIndex);
-            lutemon.train(attDefValue);
-            lutemons.set(fighterIndex, lutemon);
-            adapter.notifyDataSetChanged();
-        }
+        adapter.notifyDataSetChanged();
 
-        // After training, the user get's notification that the training was successful!
-        context = TrainingGroundActivity.this;
-        Toast.makeText(context, "Treenaus suoritettu!", Toast.LENGTH_LONG).show();
     }
 
 }
