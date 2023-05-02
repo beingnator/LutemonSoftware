@@ -75,8 +75,7 @@ public class TrainingGroundActivity extends AppCompatActivity {
             lutemons.set(fighterIndex, lutemon);
             adapter.notifyDataSetChanged();
         }
-
-        // After training, the user get's notification that the training was successful!
+        // After training, the user gets notification that the training was successful!
         context = TrainingGroundActivity.this;
         Toast.makeText(context, "Treenaus suoritettu!", Toast.LENGTH_LONG).show();
     }

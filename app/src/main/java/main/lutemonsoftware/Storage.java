@@ -24,7 +24,6 @@ public class Storage {
     public void addLutemon(Lutemon lutemon) {
         lutemons.add(lutemon);
     }
-
     public static Lutemon getLutemon(int pos) {
         return lutemons.get(pos);
     }
@@ -67,7 +66,7 @@ public class Storage {
         for (i=0 ; i < lutemons.size() ; i++ ) {
             System.out.println("Eka arvo on " + i);
 
-            if ( lutemons.get(i).getSelectionStatus() == 1 ) {
+            if (lutemons.get(i).getSelectionStatus() == 1 ) {
                 System.out.println("toka arvo on " + i);
                 break;
             }
