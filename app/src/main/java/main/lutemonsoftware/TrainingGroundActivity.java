@@ -43,7 +43,6 @@ public class TrainingGroundActivity extends AppCompatActivity {
             startActivity(intent);
         } else {
             lutemon = Storage.getFirstSelectedLutemon();
-            lutemon = Storage.getFirstSelectedLutemon();
             lutemonName.setText(lutemon.getName());
             lutemonLogo.setImageResource(lutemon.getImage());
         }
