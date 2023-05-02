@@ -17,10 +17,20 @@ import android.widget.Toast;
 
 public class BattleGroundActivity extends AppCompatActivity {
 
+    private Lutemon lutemon1;
+    private Lutemon lutemon2;
+
     Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        lutemon1 = Storage.getFirstSelectedLutemon();
+        lutemon2 = Storage.getSecondSelectedLutemon();
+
+        TextView lutemon1Name = findViewById(R.id.txtLutemon1Name);
+        TextView lutemon2Name = findViewById(R.id.txtLutemon2Name);
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_battle_ground);
 
@@ -35,12 +45,18 @@ public class BattleGroundActivity extends AppCompatActivity {
         }
 
 
+        lutemon1Name.setText(lutemon1.getName());
+        lutemon2Name.setText(lutemon1.getName());
+
+
+
     }
 
     public void startBattle(View view) {
 
         Button btnStartFight = findViewById(R.id.btnFight);
         TextView fightStats = findViewById(R.id.txtBattleStats);
+
 
 
     }

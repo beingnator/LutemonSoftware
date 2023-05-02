@@ -12,6 +12,7 @@ public class Storage {
     private static ArrayList<Lutemon> lutemons = new ArrayList<>();
     private static Storage storage = null;
     private static int numberOfSelecterdLutemons=0;
+    private static int i;
 
     public static Storage getInstance() {
         if (storage == null) {
@@ -60,6 +61,24 @@ public class Storage {
             }
         }
         return numberOfSelecterdLutemons;
+    }
+
+    public static Lutemon getFirstSelectedLutemon() {
+        for (i=0 ; i < lutemons.size() ; i++ ) {
+            if ( lutemons.get(i).getSelectionStatus() == 1 ) {
+                break;
+            }
+        }
+        return lutemons.get(i);
+    }
+
+    public static Lutemon getSecondSelectedLutemon() {
+        for (i=lutemons.size() ; i > -1 ; i-- ) {
+            if ( lutemons.get(i).getSelectionStatus() == 1 ) {
+                break;
+            }
+        }
+        return lutemons.get(i);
     }
 
 }

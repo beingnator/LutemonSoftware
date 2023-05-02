@@ -70,4 +70,6 @@ public class Lutemon implements Serializable {
         return trainingDays;
     }
 
+
+
 }
