@@ -27,7 +27,7 @@ public class BattleGroundActivity extends AppCompatActivity {
     long wait = 3000;
     Context context = this;
     int firstRunIndicator = 0;
-    int turn;
+    int turn = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,9 +84,13 @@ public class BattleGroundActivity extends AppCompatActivity {
             firstRunIndicator = 1;
         }
 
-        if (turn != 0) { turn = fight(turn); }
+        if ( turn != 0 ) {
+            turn = fight(turn);
+            Storage.saveLutemons(this);
+        }
         else{
             firstRunIndicator = 0;
+            turn = 1;
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }
@@ -172,9 +176,13 @@ public class BattleGroundActivity extends AppCompatActivity {
             // After battle the lutemon that died must be handled according to lutemonDeathHandler
             if ( lutemon1.health <= 0 ) {
                 lutemon1.lutemonDeathHandler();
+                lutemon1.setBattlesLost( lutemon1.getBattlesLost() + 1 );
+                lutemon2.setBattlesWon( lutemon2.getBattlesWon() + 1 );
                 Toast.makeText(context, "Taistelu on päättynyt, " + lutemon1.getName() + " hävisi ja menetti kokemuksensa.", Toast.LENGTH_LONG).show();
             } else {
                 lutemon2.lutemonDeathHandler();
+                lutemon2.setBattlesLost( lutemon2.getBattlesLost() + 1 );
+                lutemon1.setBattlesWon( lutemon1.getBattlesWon() + 1 );
                 Toast.makeText(context, "Taistelu on päättynyt, " + lutemon2.getName() + " hävisi ja menetti kokemuksensa.", Toast.LENGTH_LONG).show();
             }
 

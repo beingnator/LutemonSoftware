@@ -32,7 +32,7 @@ public class Storage {
         return lutemons;
     }
 
-    public void saveLutemons(Context context) {
+    public static void saveLutemons(Context context) {
         try {
             ObjectOutputStream userWriter = new ObjectOutputStream(context.openFileOutput("lutemon.data", Context.MODE_PRIVATE));
             userWriter.writeObject(lutemons);

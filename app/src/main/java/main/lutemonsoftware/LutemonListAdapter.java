@@ -17,6 +17,7 @@ public class LutemonListAdapter extends RecyclerView.Adapter<ListViewHolder>{
     private ArrayList<Lutemon> lutemons = new ArrayList<>();
     private int pos;
 
+
     public LutemonListAdapter(Context context, ArrayList<Lutemon> lutemons) {
         this.context = context;
         this.lutemons = lutemons;
@@ -64,6 +65,7 @@ public class LutemonListAdapter extends RecyclerView.Adapter<ListViewHolder>{
                     System.out.println("Valinta ilmaisimen arvo: " + Storage.getLutemon(pos).getSelectionStatus());
                     System.out.println("Lutemoneja : " + Lutemon.getNumberOfCreatedLutemons());
                 }
+                Storage.saveLutemons(context);
             }
         });
 

@@ -71,6 +71,14 @@ public class Lutemon implements Serializable {
         return battlesLost;
     }
 
+    public void setBattlesLost(int i) {
+        battlesLost = i;
+    }
+
+    public void setBattlesWon(int i) {
+        battlesWon = i;
+    }
+
     public int getTrainingDays() {
         return trainingDays;
     }
