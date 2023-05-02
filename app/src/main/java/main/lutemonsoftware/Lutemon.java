@@ -63,6 +63,10 @@ public class Lutemon implements Serializable {
         return battlesWon;
     }
 
+    public int getImage() {
+        return image;
+    }
+
     public int getBattlesLost() {
         return battlesLost;
     }
