@@ -64,16 +64,21 @@ public class Storage {
     }
 
     public static Lutemon getFirstSelectedLutemon() {
-        for (i=0 ; i < lutemons.size() ; i++ ) {
+        for (i=0 ; i < lutemons.size()-1 ; i++ ) {
+            System.out.println("Eka arvo on " + i);
+
             if ( lutemons.get(i).getSelectionStatus() == 1 ) {
+                System.out.println("toka arvo on " + i);
                 break;
             }
         }
+
+        System.out.println("viimeinen arvo on " + i);
         return lutemons.get(i);
     }
 
     public static Lutemon getSecondSelectedLutemon() {
-        for (i=lutemons.size() ; i > -1 ; i-- ) {
+        for (i=lutemons.size()-1 ; i > -1 ; i-- ) {
             if ( lutemons.get(i).getSelectionStatus() == 1 ) {
                 break;
             }
