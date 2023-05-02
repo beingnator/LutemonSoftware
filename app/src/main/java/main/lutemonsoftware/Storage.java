@@ -64,7 +64,7 @@ public class Storage {
     }
 
     public static Lutemon getFirstSelectedLutemon() {
-        for (i=0 ; i < lutemons.size()-1 ; i++ ) {
+        for (i=0 ; i < lutemons.size() ; i++ ) {
             System.out.println("Eka arvo on " + i);
 
             if ( lutemons.get(i).getSelectionStatus() == 1 ) {

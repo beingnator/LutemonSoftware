@@ -25,8 +25,6 @@ public class TrainingGroundActivity extends AppCompatActivity {
         RadioGroup rgFighters = findViewById(R.id.rgFighters);
         RadioGroup rgAttDef = findViewById(R.id.rgAttDef);
         Button btnTraining = findViewById(R.id.btnTraining);
-        TextView txtTraining = findViewById(R.id.txtTraining);
-
 
         // After training, the user get's notification that the training was successful!
         context = TrainingGroundActivity.this;
