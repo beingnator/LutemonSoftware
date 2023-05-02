@@ -30,13 +30,6 @@ public class TrainingGroundActivity extends AppCompatActivity {
 
         adapter = new LutemonListAdapter(this, lutemons);
 
-        if (Storage.getNumberOfSelectedLutemons() != 1) {
-            Toast.makeText(context, "Valitse listauksesta -YKSI- Lutemon, jota haluat treenata!", Toast.LENGTH_LONG).show();
-
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-        }
-
     }
 
     public void startTraining(View view) {
@@ -44,18 +37,17 @@ public class TrainingGroundActivity extends AppCompatActivity {
 
         int attDefValue = -1;
         Lutemon lutemon = Storage.getInstance().getFirstSelectedLutemon();
+        context = TrainingGroundActivity.this;
 
         switch (rgAttDef.getCheckedRadioButtonId()) {
             case R.id.rbAttack:
                 attDefValue = 0;
                 lutemon.train(attDefValue);
-                context = TrainingGroundActivity.this;
                 Toast.makeText(context, "Hyökkäyksen treenaus suoritettu!", Toast.LENGTH_LONG).show();
                 break;
             case R.id.rbDefense:
                 attDefValue = 1;
                 lutemon.train(attDefValue);
-                context = TrainingGroundActivity.this;
                 Toast.makeText(context, "Puolustuksen treenaus suoritettu!", Toast.LENGTH_LONG).show();
                 break;
         }

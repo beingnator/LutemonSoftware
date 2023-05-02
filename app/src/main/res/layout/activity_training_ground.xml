@@ -14,7 +14,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="24dp"
-        android:text="Valitse taistelija ja mitä haluat treenata"
+        android:text="Valitse mitä haluat treenata"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
