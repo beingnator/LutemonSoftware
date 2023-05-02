@@ -1,6 +1,7 @@
 package main.lutemonsoftware;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Lutemon implements Serializable {
     protected String name, color;
@@ -70,6 +71,12 @@ public class Lutemon implements Serializable {
         return trainingDays;
     }
 
-
-
+    public void train(int attDefValue) {
+        if (attDefValue == 0) {
+            experienceAttack += 2;
+        } else if (attDefValue == 1) {
+            experienceDefence += 2;
+        }
+        trainingDays++;
+    }
 }

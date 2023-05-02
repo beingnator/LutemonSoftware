@@ -73,4 +73,5 @@ public class LutemonListAdapter extends RecyclerView.Adapter<ListViewHolder>{
     public int getItemCount() {
         return lutemons.size();
     }
+
 }
