@@ -25,9 +25,9 @@ public class BattleGroundActivity extends AppCompatActivity {
     private Lutemon lutemon1;
     private Lutemon lutemon2;
     long wait = 3000;
-    Context context = this;
-    int firstRunIndicator = 0;
-    int turn = 1;
+    private Context context = this;
+    private int firstRunIndicator = 0;
+    private int turn = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,9 +91,12 @@ public class BattleGroundActivity extends AppCompatActivity {
         else{
             firstRunIndicator = 0;
             turn = 1;
+            Storage.saveLutemons(this);
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }
+
+
     }
 
 
@@ -118,11 +121,11 @@ public class BattleGroundActivity extends AppCompatActivity {
             lutemon2Action.setImageResource(R.drawable.shield_icon_png_10);
 
             attackDamage = lutemon1.attack + Math.round(lutemon1.experienceAttack * random.nextInt(101) / 100);
-            defence = lutemon2.defence + Math.round(lutemon2.experienceAttack * random.nextInt(101) / 100);
+            defence = lutemon2.defence + Math.round(lutemon2.experienceDefence * random.nextInt(101) / 100);
 
-            txtLutemon1Action.setText( String.valueOf( attackDamage) );
+            txtLutemon1Action.setText( String.valueOf(attackDamage) );
 
-            if ( attackDamage <= defence ) {
+            if ( attackDamage <= defence) {
                 finalDamage = 0;
                 txtLutemon2Action.setText( String.valueOf( -attackDamage) );
                 txtBattleLog.append(lutemon1.getName() + " hyökkää, mutta " + lutemon2.getName() + " torjuu kaiken vahingon!\n");
@@ -148,11 +151,11 @@ public class BattleGroundActivity extends AppCompatActivity {
 
 
             attackDamage = lutemon1.attack + Math.round(lutemon1.experienceAttack * random.nextInt(101) / 100);
-            defence = lutemon2.defence + Math.round(lutemon2.experienceAttack * random.nextInt(101) / 100);
+            defence = lutemon2.defence + Math.round(lutemon2.experienceDefence * random.nextInt(101) / 100);
 
-            txtLutemon2Action.setText( String.valueOf( attackDamage) );
+            txtLutemon2Action.setText( String.valueOf(attackDamage) );
 
-            if ( attackDamage <= defence ) {
+            if ( attackDamage <= defence) {
                 finalDamage = 0;
                 txtLutemon1Action.setText( String.valueOf( -attackDamage) );
                 txtBattleLog.append(lutemon2.getName() + " hyökkää, mutta " + lutemon1.getName() + " torjuu kaiken vahingon!\n");
@@ -179,11 +182,13 @@ public class BattleGroundActivity extends AppCompatActivity {
                 lutemon1.setBattlesLost( lutemon1.getBattlesLost() + 1 );
                 lutemon2.setBattlesWon( lutemon2.getBattlesWon() + 1 );
                 Toast.makeText(context, "Taistelu on päättynyt, " + lutemon1.getName() + " hävisi ja menetti kokemuksensa.", Toast.LENGTH_LONG).show();
+                txtLutemon1Health.setText("Elämä: 0");
             } else {
                 lutemon2.lutemonDeathHandler();
                 lutemon2.setBattlesLost( lutemon2.getBattlesLost() + 1 );
                 lutemon1.setBattlesWon( lutemon1.getBattlesWon() + 1 );
                 Toast.makeText(context, "Taistelu on päättynyt, " + lutemon2.getName() + " hävisi ja menetti kokemuksensa.", Toast.LENGTH_LONG).show();
+                txtLutemon2Health.setText("Elämä: 0");
             }
 
 
