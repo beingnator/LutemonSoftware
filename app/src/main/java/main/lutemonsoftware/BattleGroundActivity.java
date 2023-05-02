@@ -77,6 +77,8 @@ public class BattleGroundActivity extends AppCompatActivity {
 
         Random random = new Random();
 
+
+        // In first run we want to get random lutemon to start with attack.
         if ( firstRunIndicator  == 0 ) {
             if ( random.nextBoolean() ) {
                 turn = 2;
@@ -84,6 +86,7 @@ public class BattleGroundActivity extends AppCompatActivity {
             firstRunIndicator = 1;
         }
 
+        // if turn is zero, means  that fight has ended and return to main activity
         if ( turn != 0 ) {
             turn = fight(turn);
             Storage.saveLutemons(this);
@@ -116,6 +119,7 @@ public class BattleGroundActivity extends AppCompatActivity {
         ImageView lutemon2Action = findViewById(R.id.imgLutemon2Action);
 
 
+        // The attacking side changes after every turn and we have to check which one is attacking, 1st or 2nd
         if ( turn == 1 ) {
             lutemon1Action.setImageResource(R.drawable.sword_icon16);
             lutemon2Action.setImageResource(R.drawable.shield_icon_png_10);
@@ -125,6 +129,7 @@ public class BattleGroundActivity extends AppCompatActivity {
 
             txtLutemon1Action.setText( String.valueOf(attackDamage) );
 
+            // If defence potential is greater than attack potential, sum is 0, cant do negative damage.
             if ( attackDamage <= defence) {
                 finalDamage = 0;
                 txtLutemon2Action.setText( String.valueOf( -attackDamage) );
@@ -141,7 +146,7 @@ public class BattleGroundActivity extends AppCompatActivity {
             txtLutemon2Health.setText( "Elämä: " + lutemon2.health );
 
 
-            turn = 2;
+            turn = 2; // change turn to the other lutemon
 
         }
 
@@ -155,6 +160,7 @@ public class BattleGroundActivity extends AppCompatActivity {
 
             txtLutemon2Action.setText( String.valueOf(attackDamage) );
 
+            // If defence potential is greater than attack potential, sum is 0, cant do negative damage.
             if ( attackDamage <= defence) {
                 finalDamage = 0;
                 txtLutemon1Action.setText( String.valueOf( -attackDamage) );
@@ -171,10 +177,12 @@ public class BattleGroundActivity extends AppCompatActivity {
 
             txtLutemon1Health.setText( "Elämä: " + lutemon1.health );
 
-            turn = 1;
+            turn = 1; // change turn to the other lutemon
 
         }
 
+
+        // Operations after other lutemon has won
         if ( lutemon1.health <= 0 | lutemon2.health <= 0 ) {
             // After battle the lutemon that died must be handled according to lutemonDeathHandler
             if ( lutemon1.health <= 0 ) {
@@ -182,13 +190,13 @@ public class BattleGroundActivity extends AppCompatActivity {
                 lutemon1.setBattlesLost( lutemon1.getBattlesLost() + 1 );
                 lutemon2.setBattlesWon( lutemon2.getBattlesWon() + 1 );
                 Toast.makeText(context, "Taistelu on päättynyt, " + lutemon1.getName() + " hävisi ja menetti kokemuksensa.", Toast.LENGTH_LONG).show();
-                txtLutemon1Health.setText("Elämä: 0");
+                txtLutemon1Health.setText("Elämä: 0");  // life doesn't go below 0
             } else {
                 lutemon2.lutemonDeathHandler();
                 lutemon2.setBattlesLost( lutemon2.getBattlesLost() + 1 );
                 lutemon1.setBattlesWon( lutemon1.getBattlesWon() + 1 );
                 Toast.makeText(context, "Taistelu on päättynyt, " + lutemon2.getName() + " hävisi ja menetti kokemuksensa.", Toast.LENGTH_LONG).show();
-                txtLutemon2Health.setText("Elämä: 0");
+                txtLutemon2Health.setText("Elämä: 0"); // life doesn't go below 0
             }
 
 
