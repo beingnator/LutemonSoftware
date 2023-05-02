@@ -7,23 +7,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
+import java.util.concurrent.TimeUnit;
+import java.util.Scanner;
 import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class BattleGroundActivity extends AppCompatActivity {
 
     private Lutemon lutemon1;
     private Lutemon lutemon2;
-
+    long wait = 3000;
     Context context = this;
 
     @Override
@@ -70,7 +71,7 @@ public class BattleGroundActivity extends AppCompatActivity {
 
 
 
-    public void startBattle(View view) {
+    public void startBattle(View view) throws Exception {
 
         Random random = new Random();
 
@@ -88,7 +89,7 @@ public class BattleGroundActivity extends AppCompatActivity {
     }
 
 
-    private void fight(int turn) {
+    private void fight(int turn) throws InterruptedException {
 
         int finalDamage = 0;
         int attackDamage = 0;
@@ -159,12 +160,29 @@ public class BattleGroundActivity extends AppCompatActivity {
 
             txtLutemon1Health.setText( "Elämä: " + lutemon1.health );
 
-
-
             turn = 1;
 
         }
+
+        if ( lutemon1.health <= 0 | lutemon2.health <= 0 ) {
+            // After battle the lutemon that died must be handled according to lutemonDeathHandler
+            if ( lutemon1.health <= 0 ) {
+                lutemon1.lutemonDeathHandler();
+            } else {
+                lutemon2.lutemonDeathHandler();
+            }
+        }
+        else {
+            // if battle is not over = lutemons got health, we need to wait a bit and fight again.
+            /*TimeUnit unit = TimeUnit.MILLISECONDS;
+            unit.sleep(wait);
+            System.out.println("ajokerta");*/
+            Thread.sleep(wait);
+            fight(turn);
+
+        }
     }
+
 
 
 }
