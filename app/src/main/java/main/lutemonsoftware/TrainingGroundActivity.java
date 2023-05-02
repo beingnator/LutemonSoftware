@@ -26,6 +26,7 @@ public class TrainingGroundActivity extends AppCompatActivity {
         RadioGroup rgAttDef = findViewById(R.id.rgAttDef);
         Button btnTraining = findViewById(R.id.btnTraining);
 
+
         // After training, the user get's notification that the training was successful!
         context = TrainingGroundActivity.this;
         Toast.makeText(context, "Treenaus suoritettu!", Toast.LENGTH_LONG).show();
