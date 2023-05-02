@@ -59,12 +59,12 @@ public class TrainingGroundActivity extends AppCompatActivity {
         switch (rgAttDef.getCheckedRadioButtonId()) {
             case R.id.rbAttack:
                 attDefValue = 0;
-                lutemon.train(attDefValue);
+                lutemon.trainLutemon(attDefValue);
                 Toast.makeText(context, "Hyökkäyksen treenaus suoritettu!", Toast.LENGTH_LONG).show();
                 break;
             case R.id.rbDefense:
                 attDefValue = 1;
-                lutemon.train(attDefValue);
+                lutemon.trainLutemon(attDefValue);
                 Toast.makeText(context, "Puolustuksen treenaus suoritettu!", Toast.LENGTH_LONG).show();
                 break;
         }

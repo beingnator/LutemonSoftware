@@ -83,7 +83,7 @@ public class Lutemon implements Serializable {
         return trainingDays;
     }
 
-    public void train(int attDefValue) {
+    public void trainLutemon(int attDefValue) {
         if (attDefValue == 0) {
             experienceAttack += 2;
         } else if (attDefValue == 1) {
