@@ -89,19 +89,9 @@
         android:layout_marginEnd="24dp"
         android:onClick="startTraining"
         android:text="Treenaa"
+        android:backgroundTint="#4527A0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rgAttDef" />
 
-    <TextView
-        android:id="@+id/txtTraining"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="24dp"
-        android:text="Treenaus suoritettu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTraining" />
 </androidx.constraintlayout.widget.ConstraintLayout>
