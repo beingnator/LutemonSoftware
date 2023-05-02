@@ -69,7 +69,6 @@ public class LutemonListAdapter extends RecyclerView.Adapter<ListViewHolder>{
             }
         });
 
-
     }
 
     @Override

@@ -193,7 +193,4 @@ public class BattleGroundActivity extends AppCompatActivity {
         return turn;
     }
 
-
-
-
 }
