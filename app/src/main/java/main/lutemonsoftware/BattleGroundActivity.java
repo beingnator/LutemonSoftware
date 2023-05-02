@@ -17,6 +17,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class BattleGroundActivity extends AppCompatActivity {
 
     private Lutemon lutemon1;
@@ -70,16 +72,45 @@ public class BattleGroundActivity extends AppCompatActivity {
 
     public void startBattle(View view) {
 
+        Random random = new Random();
+
+        int turn = 1; // which Lutemon has attacking turn, first or second
+        int finalDamage = 0;
+        int attackDamage = 0;
+        int defence = 0;
 
         TextView lutemon1Health = findViewById(R.id.txtLutemon1Health);
         TextView lutemon2Health = findViewById(R.id.txtLutemon2Health);
-
-
-        Button btnStartFight = findViewById(R.id.btnFight);
-        TextView fightStats = findViewById(R.id.txtBattleStats);
+        ImageView lutemon1Action = findViewById(R.id.imgLutemon1Action);
+        ImageView lutemon2Action = findViewById(R.id.imgLutemon2Action);
 
 
 
+        if ( random.nextBoolean() ) {
+            turn = 2;
+        }
+
+
+
+        // Battle actions
+        while (true) {
+            if ( turn == 1 ) {
+                lutemon1Action.setImageResource(R.drawable.sword_icon16);
+                lutemon2Action.setImageResource(R.drawable.shield_icon_png_10);
+
+
+
+                attackDamage = lutemon1.attack + Math.round(lutemon1.experienceAttack * random.nextInt(101) / 100);
+                defence = lutemon2.defence + Math.round(lutemon2.experienceAttack * random.nextInt(101) / 100);
+
+
+
+
+
+            }
+
+
+        }
     }
 
 
