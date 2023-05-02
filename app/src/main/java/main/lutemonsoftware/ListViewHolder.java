@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ListViewHolder extends RecyclerView.ViewHolder {
     int pos;
-    TextView textName, textAttack, textDefence, textHealth, textExperienceAttack, textExperienceDefence, textSelection;
+    TextView textName, textAttack, textDefence, textHealth, textExperienceAttack, textExperienceDefence, textWins, textSelection;
     ImageView imgPicture;
     public ListViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -21,6 +21,7 @@ public class ListViewHolder extends RecyclerView.ViewHolder {
         textHealth = itemView.findViewById(R.id.txtHealth);
         textExperienceAttack = itemView.findViewById(R.id.txtExperienceAttack);
         textExperienceDefence = itemView.findViewById(R.id.txtExperienceDefence);
+        textWins = itemView.findViewById(R.id.txtWinStats);
         textSelection = itemView.findViewById(R.id.txtSelect);
 
     }
