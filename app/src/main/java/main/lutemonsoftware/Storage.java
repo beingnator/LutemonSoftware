@@ -26,7 +26,7 @@ public class Storage {
     }
 
     public static Lutemon getLutemon(int pos) {
-        return storage.lutemons.get(pos);
+        return lutemons.get(pos);
     }
 
     public ArrayList<Lutemon> getLutemons() {
